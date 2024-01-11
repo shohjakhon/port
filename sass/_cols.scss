@@ -1,0 +1,143 @@
+$screen: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.d-flex{
+    display: flex;
+}
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+
+// JUSTIFY CONTENT
+
+.jc-between{
+    justify-content: space-between;
+}
+.jc-around{
+    justify-content: space-around;
+}
+.jc-evenly{
+    justify-content: space-evenly;
+}
+.jc-center{
+    justify-content: center;
+}
+.jc-left{
+    justify-content: left;
+}
+.jc-right{
+    justify-content: right;
+}
+
+// ALIGN ITEMS
+
+.ai-start{
+    align-items: flex-start;
+}
+.ai-end{
+    align-items: flex-end;
+}
+.ai-center{
+    align-items: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+
+.container{
+    width: 85%;
+    margin: auto;
+}
+
+
+@for $i from 1 to 13{
+    .col-#{$i}{
+        width: #{100% / 12 * $i};
+    }
+} 
+
+@each $key ,$value in $screen{
+    @media only screen and (min-width:$value) {
+        @for $i from 1 to 13{
+            .col-#{$key}-#{$i}{
+                width: #{100% / 12 * $i};
+            }
+        }
+        @if $value == 576px{
+            .container{
+                width: 90%;
+                margin: auto;
+            }
+        }
+        @if $value == 992px{
+            .container{
+                width: 85%;
+                margin: auto;
+            }
+        }
+        @if $value == 1200px{
+            .container{
+                width: 1140px;
+                margin: auto;
+            }
+        }
+
+        .d-#{$key}-flex{
+            display: flex;
+        }
+        .d-#{$key}-none{
+            display: none;
+        }
+        .d-#{$key}-block{
+            display: block;
+        }
+
+        .jc-#{$key}-between{
+            justify-content: space-between;
+        }
+        .jc-#{$key}-around{
+            justify-content: space-around;
+        }
+        .jc-#{$key}-evenly{
+            justify-content: space-evenly;
+        }
+        .jc-#{$key}-center{
+            justify-content: center;
+        }
+        .jc-#{$key}-left{
+            justify-content: left;
+        }
+        .jc-#{$key}-right{
+            justify-content: right;
+        }
+
+        .ai-#{$key}-start{
+            align-items: flex-start;
+        }
+        .ai-#{$key}-end{
+            align-items: flex-end;
+        }
+        .ai-#{$key}-center{
+            align-items: center;
+        }
+        .flex-#{$key}-column{
+            flex-direction: column;
+        }
+        
+    }
+    
+}
+

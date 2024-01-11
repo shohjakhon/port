@@ -1,0 +1,102 @@
+@use "variable" as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+nav.nav {
+  background: var.$dark-gray;
+  padding: 1.5rem 0;
+}
+
+.main-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../image/banner-bg.jpg") no-repeat top -50px center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.logo a {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-family: var.$playfair;
+  color: white;
+}
+
+.nav-link a {
+  color: white;
+  font-size: 1rem;
+  font-family: var.$roboto;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  &:not(:nth-last-of-type(4)) {
+    margin-right: 2rem;
+  }
+}
+
+.nav-icon i{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+main.main {
+    height: 80%;
+  h1 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 500;
+    font-family: var.$playfair;
+
+    span {
+      color: var.$dark-gray;
+    }
+  }
+
+  p{
+    color: white;
+    font-family: var.$roboto;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 0.5rem auto;
+  }
+
+  .search{
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    width: 30%;
+    cursor: pointer;
+
+    input{
+        border: none;
+        outline: none;
+        width: 80%;
+        font-size: 1rem;
+        font-family: var.$roboto;
+        font-weight: 500;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    main.main{
+        h1{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 1rem;
+            text-align: center;
+        }
+        .search{
+            width: 80%;
+        }
+    }
+}
